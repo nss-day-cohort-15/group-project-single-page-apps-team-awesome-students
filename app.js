@@ -1,9 +1,20 @@
-// document.getElementById("deleteAll").addEventListener("click", deleteAll)
+console.log("the script tag is good")
 
-// function deleteAll () {
-//   document.innerHTML.getElementById("deleteAll") = "There are no messages to show right now.";
-// }
+///////////////////////////////////////////////////////////
+// Clear Message Board Button
+///////////////////////////////////////////////////////////
 
+var clearAllButton = document.getElementById("clearAllButton");
+
+clearAllButton.addEventListener("click", clearAll)
+
+function clearAll () {
+  document.innerHTML.getElementById("clearAllButton") = "There are no messages to show right now.";
+}
+
+///////////////////////////////////////////////////////////
+// Importing the default five messages from JSON document
+///////////////////////////////////////////////////////////
 
 var board = document.querySelector('#board')
 
@@ -19,8 +30,8 @@ function didLoadData () {
     var output = currentMessage.message
     board.innerHTML += `
       <div>
-        <p>${output}</p>
-        <button value="delete">Delete</button>
+        <p id="clearAllButton">${output}</p><button value="delete" id="clearAllButton">Delete</button>
+        <br> <br>
       </div>`
   })
 }
