@@ -14,13 +14,13 @@ xhr.send()
 
 function didLoadData () {
   var message = JSON.parse(xhr.responseText)
-  console.log(message[0]);
 
   message.forEach(function (currentMessage) {
     var output = currentMessage.message
     board.innerHTML += `
       <div>
-        <p>${output}</p><button value="delete">Delete</button>
+        <p>${output}</p>
+        <button value="delete">Delete</button>
       </div>`
   })
 }
