@@ -4,7 +4,6 @@ body {
 .logo {
   font-size: 2em;
   font-weight: bold;
-  color: black;
   font-family:'Galada', cursive;
 }
 .nav {
@@ -13,4 +12,19 @@ body {
 .checkbox-inline {
   margin-left: 80px;
 }
-
+#inlineCheckbox1 {
+  background-color: #000;
+}
+.darkTheme {
+  background-color: #000;
+  color: #00ff00;
+  border-color: #00ff00;
+}
+.container.darkTheme {
+  border-color: #00ff00;
+}
+button.btn.btn-default.darkTheme {
+  color: #fff;
+  border-color: #00ff00;
+  background-color: #000;
+}
