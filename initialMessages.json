@@ -1,7 +1,17 @@
 [
-  "           ",
-  "           ",
-  "           ",
-  "           ",
-  "           "
+  {
+    "message":"Hey you guys, do you know how to do the SPA/xhr quiz? I don't even know where to start?!"
+  },
+  {
+    "message":"Nah, sorry, I am still on the HTML exercises!"
+  },
+  {
+    "message":"Yea, I'm done. Good luck! It was super hard!"
+  },
+  {
+    "message":"Anyone want to go our for drinks? I heard it helps with the quiz..."
+  },
+  {
+    "message":"When and where? I'll be there soon."
+  }
 ]
