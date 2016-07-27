@@ -5,7 +5,7 @@
 // }
 
 
-var board = document.querySelector('board')
+var board = document.querySelector('#board')
 
 var xhr = new XMLHttpRequest()
 xhr.open('GET', 'initialMessages.json')
@@ -13,14 +13,14 @@ xhr.addEventListener('load', didLoadData)
 xhr.send()
 
 function didLoadData () {
-  var messages = JSON.parse(xhr.responseText)
-  console.log(messages);
+  var message = JSON.parse(xhr.responseText)
+  console.log(message[0]);
 
-  messages.forEach(function () {
+  message.forEach(function (currentMessage) {
+    var output = currentMessage.message
     board.innerHTML += `
       <div>
-        <p>${message.value}</p>
-        <button value="delete"></button>
+        <p>${output}</p><button value="delete">Delete</button>
       </div>`
   })
 }
