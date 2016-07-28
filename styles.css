@@ -39,3 +39,8 @@ body {
 .largeText {
   font-size: 2.25em;
 }
+
+nav img {
+  height:180px;
+  width:200px;
+}
