@@ -34,9 +34,9 @@ function clearAll () {
 }
 
 
-// Importing the default five messages from JSON document //
+// Importing the default five messages from JSON document IIFE //
 
-
+funtion showInitalMessages () {
 var board = document.querySelector('#board')
 
 var xhr = new XMLHttpRequest()
@@ -44,10 +44,19 @@ xhr.open('GET', 'initialMessages.json')
 xhr.addEventListener('load', didLoadData)
 xhr.send()
 
+return{
+  getInitalMessages: funtion () {
+
+  }
+}
+
 function didLoadData () {
   var message = JSON.parse(xhr.responseText)
 
-  message.forEach(function (currentMessage) {
+}}
+
+
+message.forEach(function (currentMessage) {
     var output = currentMessage.message
     board.innerHTML += `
       <div>
@@ -55,5 +64,4 @@ function didLoadData () {
         <br> <br>
       </div>`
   })
-}
 
