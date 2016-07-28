@@ -4,7 +4,6 @@ body {
 .logo {
   font-size: 2em;
   font-weight: bold;
-  color: black;
   font-family:'Galada', cursive;
 }
 .nav {
@@ -14,3 +13,29 @@ body {
   margin-left: 80px;
 }
 
+.board {
+  border:1px solid black;
+}
+
+.board p, button {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.board button {
+  border-radius: 5px;
+}
+
+/*DARK THEME STYLING*/
+.darkTheme {
+  background-color: #000;
+  color: #00ff00;
+  border-color: #00ff00;
+}
+.container.darkTheme {
+  border-color: #00ff00;
+}
+/*LARGE TEXT STYLING*/
+.largeText {
+  font-size: 2.25em;
+}
