@@ -13,8 +13,13 @@ body {
   margin-left: 80px;
 }
 
+.kill {
+  margin-bottom: 5px;
+}
+
 .board {
   border:1px solid black;
+  margin-bottom: 15px;
 }
 
 .board p, button {

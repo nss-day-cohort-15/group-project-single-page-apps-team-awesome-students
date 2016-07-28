@@ -2,15 +2,14 @@
 Chatty = (function (deleting) {
 
   deleting.deleteAll = function(evt) {
-    var div = document.getElementById('board');
-    if (div.style.display !== 'none') {
-        div.style.display = 'none';
-    }
-    else {
-        div.style.display = 'block';
-    }
+
+    var board = document.getElementById('board');
+
+    board.innerHTML = " ";
+
 };
 
+// Clear Self
   deleting.deleteSelf = function(evt) {
   	var toDelete = document.getElementById(event.target.id);
   	toDelete.remove();
