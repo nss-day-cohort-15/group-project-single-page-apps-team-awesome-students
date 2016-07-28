@@ -1,28 +1,6 @@
+Chatty = (function (createMessage) {
 
-function enter(e) {
-      if (13 == e.keyCode) {
-      e.preventDefault()
-       Chatty.createMessage()
-   }
-  };
-document.getElementById('userInput').addEventListener("keypress", enter)
-
-var Chatty = (function (message) {
-
-  function createMessage () {
-
-    var userInput = document.querySelector("#nuserInput").value;
-    console.log(userInput);
-
-     if (!userInput) {
-      return alert("You have to enter a message!");
-    };
-
-// Delete Button
-  // var deleteButton = `<button id="deleteButton"> Delete Message </button>`;
-  // deleteButton.addEventListener("click", function(evt) {
-
-  // });
+  createMessage.newMessage = function(userInput) {
 
 // Time Stamps
     var currentTime = new Date();
@@ -35,17 +13,20 @@ var Chatty = (function (message) {
 //Add new message to saved messaged log
     savedMessages.push(`${currentTime} : ${userInput}`);
 
-// add new message to board
-    console.log('hello');
+// combining into new message
 
-    savedMessages.push(`${currentTime} : ${userInput}`);
+    var editedMessage = `<div> ${hour}:${minute} // ${userInput} <div> <br> <br>`;
 
-    var board = document.querySelector("#board");
+    console.log(savedMessages, editedMessage)
 
-    board.innerHTML += `<div> ${hour}:${minute} // ${userInput} deleteButton <div> <br> <br>`;
-
-    console.log(savedMessages, board)
+    return editedMessage
   };
 
-    return message
-})( {} )
+    return createMessage
+})({} )
+
+
+
+
+
+
