@@ -1,9 +1,4 @@
-
-console.log("the script tag is good")
-console.log('hey')
-
-
-// DARK THEME //
+// // DARK THEME //
 
 var darkTheme = document.getElementById("darkThemeBox")
 
@@ -13,13 +8,15 @@ darkTheme.addEventListener("click", function(){
 
 
 
-// LARGE TEXT TOGGLE //
+// // LARGE TEXT TOGGLE //
 
 var largeText = document.getElementById("largeTextBox")
 
 largeText.addEventListener("click", function(){
     document.body.classList.toggle("largeText");
 });
+
+var Chatty = (function (boardHandler) {
 
 
 // Clear Message Board Button //
@@ -40,37 +37,24 @@ button.onclick = function() {
 
 // Importing the default five messages from JSON document IIFE //
 
-funtion showInitalMessages () {
-var board = document.querySelector('#board')
-
-var xhr = new XMLHttpRequest()
-xhr.open('GET', 'initialMessages.json')
-xhr.addEventListener('load', didLoadData)
-xhr.send()
-
-return{
-  getInitalMessages: funtion () {
-
-  }
-}
-
-function didLoadData () {
-  var message = JSON.parse(xhr.responseText)
-
-}}
+boardHandler.populateBoard = function(message) {
 
 
-message.forEach(function (currentMessage) {
+  var arrayOfMessages = [];
+  message.forEach(function (currentMessage) {
+
     var output = currentMessage.message
-    board.innerHTML += `
+
+    board.innerHTML += ( `
       <div>
-        <p id="deleteMessageText">${output}</p>
-        <button value="delete" class="btn btn-default delete" id="deleteMessageButton">Delete</button>
+        <p>${output}</p><button value="delete" class="btn btn-default">Delete</button>
         <br> <br>
-      </div>`
-  })
+      </div>`)
+
+    })
+return arrayOfMessages
 }
+return boardHandler
 
 
-
-
+  }) (Chatty || {})
