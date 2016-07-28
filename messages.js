@@ -1,18 +1,24 @@
 function enter(e) {
+	e.preventDefault()
     if (13 == e.keyCode) {
      newMessage()
  }
 };
 
-var newMessage = (function (userInput) {
-  var userInput = document.querySelector("newMessage").value;
-  var board = document.querySelector("board");
+var newMessage = (function (message) {
+
+  var userInput = document.querySelector("#newMessage").value;
+  console.log(userInput);
+
+   if (!userInput) {
+    return alert("You have to enter a message!");
+  };
 
 // Delete Button
-  var deleteButton = `<button id="deleteButton"> Delete Message </button>`;
-  deleteButton.addEventListener("click", function(evt) {
+  // var deleteButton = `<button id="deleteButton"> Delete Message </button>`;
+  // deleteButton.addEventListener("click", function(evt) {
 
-  });
+  // });
 
 // Time Stamps
   var currentTime = new Date();
@@ -22,15 +28,28 @@ var newMessage = (function (userInput) {
 // Saved message logs
   var savedMessages = [];
 
-  if (!userInput) {
-    return alert("You have to enter a message!");
-  } else {
-  	return {
-  	  appendMessage: function () {
-  	  	savedMessages.push(`${currentTime} : ${userInput}`);
-        var board = document.querySelector("board").innerHTML;
-        board.innerHTML += `<p> ${hour}:${minute} // ${userInput} ${deleteButton} <p> <br> <br>`;
-  	  }
-  	}
-  };
+//Add new message to saved messaged log
+savedMessages.push(`${currentTime} : ${userInput}`);
+
+// add new message to board
+
+
+
+     console.log('hello');
+
+  	 savedMessages.push(`${currentTime} : ${userInput}`);
+
+     var board = document.querySelector("#board");
+
+     board.innerHTML += `<div> ${hour}:${minute} // ${userInput} deleteButton <div> <br> <br>`;
+
+     console.log( savedMessages, board)
+
+    return message
 })()
+
+
+
+
+
+

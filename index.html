@@ -2,11 +2,48 @@
 <html>
 <head>
   <title>Group Project</title>
-  <link rel="stylesheet" type="/bower_components/bootstrap/dist/css/bootstrap.css" href="">
-  <link rel="styles.css">
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 page-header">
+        <nav>
 
+          <form class="form-inline">
+            <div class="form-group">
+
+              <label class="logo" for="exampleInputName2">Chatty!</label>
+
+<!-- NEW MESSAGE -->
+              <input type="text" id="newMessage">
+            </div>
+
+            <button type="submit" class="btn btn-default">Clear Message Board</button>
+            <br>
+
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox1" value="darkTheme"> Dark Theme
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="largeText" value="option2"> Large Text
+            </label>
+          </form>
+        </nav>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Messages</h3>
+<!-- BOARD HERE -->
+        <div id="board"> </div>
+      </div>
+    </div>
+  </div>
 <script src="messages.js"></script>
+<script type="text/javascript" src="app.js"></script>
 </body>
 </html>

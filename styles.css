@@ -1,0 +1,16 @@
+body {
+  padding-top: 70px;
+}
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+  font-family:'Galada', cursive;
+}
+.nav {
+  display: inline;
+}
+.checkbox-inline {
+  margin-left: 80px;
+}
+
