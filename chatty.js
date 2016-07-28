@@ -20,17 +20,19 @@ xhr.send()
 //IIFE #2, adding a new message to the JSON
 	function enter(e) {
 		var userInput = document.getElementById("userInput").value;
+		var board = document.getElementById("board");
 	      if (13 == e.keyCode) {
 	      e.preventDefault()
 	      if (!userInput) {
 	      	return alert("You need to write a message!")
 	      } else {
-	      var addToJson = Chatty.newMessage(userInput);
-	      console.log(addToJson)
+	      board.innerHTML += Chatty.newMessage(userInput)
 	    }
 	   }
 	  };
 	document.getElementById('userInput').addEventListener("keypress", enter);
+
+
 
 // IIFE #3, removing items from the JSON
   var deleteButton = document.getElementById('deleteButton');
@@ -48,7 +50,6 @@ xhr.send()
 
   // };
   // deleteButton.addEventListener('click', runDeleteButton);
-return Chatty
+return thing
 })( Chatty)
 Chatty.didLoadData()
-

@@ -11,19 +11,22 @@ Chatty = (function (createMessage) {
     var savedMessages = [];
 
 //Add new message to saved messaged log
-    savedMessages.push(`${currentTime} : ${userInput}`);
+    savedMessages.unshift(`${currentTime} : ${userInput}`);
 
 // combining into new message
 
-    var editedMessage = `<div> ${hour}:${minute} // ${userInput} <div> <br> <br>`;
+    var editedMessage = `<div> <p>${hour}:${minute} // ${userInput} </p>
+    <button value="delete" class="btn btn-default">Delete</button>
+    <div> <br> <br>`;
 
     console.log(savedMessages, editedMessage)
 
     return editedMessage
   };
-
     return createMessage
-})(Chatty || {})
+
+})(Chatty ||{})
+
 
 
 
