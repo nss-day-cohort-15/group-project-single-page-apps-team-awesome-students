@@ -11,8 +11,7 @@ xhr.addEventListener('load', function(){
   var message = JSON.parse(xhr.responseText)
 	Chatty.populateBoard(message);
 })
-xhr.send()
-
+  xhr.send();
 }
 
 
@@ -26,7 +25,7 @@ xhr.send()
 	      if (!userInput) {
 	      	return alert("You need to write a message!")
 	      } else {
-	      board.innerHTML += Chatty.newMessage(userInput)
+	      board.innerHTML += Chatty.newMessage(userInput);
 	    }
 	   }
 	  };
@@ -35,21 +34,25 @@ xhr.send()
 
 
 // IIFE #3, removing items from the JSON
-  var deleteButton = document.getElementById('deleteButton');
-  var deleteAll = document.getElementById('clearAllButton');
 
-    deleteAll.addEventListener('click', runDeleteAll);
-
-   function runDeleteAll(evt) {
-   	var board = document.getElementById("board");
-   	console.log(board);
-    Chatty.deleteAll(board);
+  function runDeleteAll(evt) {
+    Chatty.deleteAll();
   };
 
-  // function runDeleteButton (evt) {
+  function runDeleteButton (evt) {
+    Chatty.deleteSelf()
+  };
 
-  // };
-  // deleteButton.addEventListener('click', runDeleteButton);
+  document.querySelector("body").addEventListener("click", function(evt) {
+
+  	if (event.target.className === "btn btn-default kill") {
+  		runDeleteButton()
+  	} else if (event.target.id === "clearAllButton") {
+  		runDeleteAll()
+  	}
+  });
+
 return thing
+
 })( Chatty)
 Chatty.didLoadData()

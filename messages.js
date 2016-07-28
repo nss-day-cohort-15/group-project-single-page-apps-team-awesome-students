@@ -21,8 +21,8 @@ Chatty = (function (createMessage) {
 
 // combining into new message
 
-    var editedMessage = `<div> <p>${hour}:${minute} // ${userInput} </p>
-    <button value="delete" class="btn btn-default">Delete</button>
+    var editedMessage = `<div id="${currentTime}"> <p>${hour}:${minute} // ${userInput} </p>
+    <button value="delete" id="${currentTime}" class="btn btn-default kill"> Delete </button>
     <div> <br> <br>`;
 
     console.log(editedMessage)
