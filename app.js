@@ -1,67 +1,72 @@
 
-console.log("the script tag is good")
-console.log('hey')
+// console.log("the script tag is good")
+// console.log('hey')
 
 
-// DARK THEME //
+// // DARK THEME //
 
-var darkTheme = document.getElementById("darkThemeBox")
+// var darkTheme = document.getElementById("darkThemeBox")
 
-darkTheme.addEventListener("click", function(){
-    document.body.classList.toggle("darkTheme");
-});
-
-
-
-// LARGE TEXT TOGGLE //
-
-var largeText = document.getElementById("largeTextBox")
-
-largeText.addEventListener("click", function(){
-    document.body.classList.toggle("largeText");
-});
+// darkTheme.addEventListener("click", function(){
+//     document.body.classList.toggle("darkTheme");
+// });
 
 
-// Clear Message Board Button //
+
+// // LARGE TEXT TOGGLE //
+
+// var largeText = document.getElementById("largeTextBox")
+
+// largeText.addEventListener("click", function(){
+//     document.body.classList.toggle("largeText");
+// });
 
 
-var clearAllButton = document.getElementById("clearAllButton");
+// // Clear Message Board Button //
 
-clearAllButton.addEventListener("click", clearAll)
 
-function clearAll () {
-  document.innerHTML.getElementById("clearAllButton") = "There are no messages to show right now.";
-}
+// var clearAllButton = document.getElementById("clearAllButton");
+
+// clearAllButton.addEventListener("click", clearAll)
+
+// function clearAll () {
+//   document.innerHTML.getElementById("clearAllButton") = "There are no messages to show right now.";
+// }
 
 
 // Importing the default five messages from JSON document IIFE //
+var Chatty = (function (boardHandler) {
 
-funtion showInitalMessages () {
-var board = document.querySelector('#board')
+boardHandler.populateBoard = function(message) {
 
-var xhr = new XMLHttpRequest()
-xhr.open('GET', 'initialMessages.json')
-xhr.addEventListener('load', didLoadData)
-xhr.send()
+    var arrayOfMessages = [];
+  message.forEach(function (currentMessage) {
 
-return{
-  getInitalMessages: funtion () {
-
-  }
-}
-
-function didLoadData () {
-  var message = JSON.parse(xhr.responseText)
-
-}}
-
-
-message.forEach(function (currentMessage) {
     var output = currentMessage.message
-    board.innerHTML += `
+
+    arrayOfMessages.unshift( `
       <div>
-        <p id="clearAllButton">${output}</p><button value="delete" id="clearAllButton" class="btn btn-default">Delete</button>
+        <p>${output}</p><button value="delete" class="btn btn-default">Delete</button>
         <br> <br>
-      </div>`
-  })
+      </div>`)
+
+    })
+return arrayOfMessages
+}
+return boardHandler
+
+  }) (Chatty || {})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
