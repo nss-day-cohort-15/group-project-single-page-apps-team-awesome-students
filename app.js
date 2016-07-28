@@ -25,13 +25,17 @@ largeText.addEventListener("click", function(){
 // Clear Message Board Button //
 
 
-var clearAllButton = document.getElementById("clearAllButton");
+var button = document.getElementById('clearAllButton');
+button.onclick = function() {
+    var div = document.getElementById('board');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
 
-clearAllButton.addEventListener("click", clearAll)
-
-function clearAll () {
-  document.innerHTML.getElementById("clearAllButton") = "There are no messages to show right now.";
-}
 
 
 // Importing the default five messages from JSON document IIFE //
@@ -60,8 +64,13 @@ message.forEach(function (currentMessage) {
     var output = currentMessage.message
     board.innerHTML += `
       <div>
-        <p id="clearAllButton">${output}</p><button value="delete" id="clearAllButton" class="btn btn-default">Delete</button>
+        <p id="deleteMessageText">${output}</p>
+        <button value="delete" class="btn btn-default delete" id="deleteMessageButton">Delete</button>
         <br> <br>
       </div>`
   })
+}
+
+
+
 
