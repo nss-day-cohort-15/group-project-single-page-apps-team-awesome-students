@@ -25,3 +25,6 @@ body {
 .largeText {
   font-size: 2.25em;
 }
+.invisble {
+  visibility: hidden;
+}
