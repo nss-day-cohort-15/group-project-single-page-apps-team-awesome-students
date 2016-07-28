@@ -15,4 +15,22 @@ var Chatty = (function (thing) {
 	  };
 	document.getElementById('userInput').addEventListener("keypress", enter);
 
-})( Chatty)
+// IIFE #3, removing items from the JSON
+  var deleteButton = document.getElementById('deleteButton');
+  var deleteAll = document.getElementById('clearAllButton');
+
+   function runDeleteAll(evt) {
+   	var board = document.getElementById("board").innerHTML;
+   	console.log(board);
+    thing.deleteAll();
+  };
+
+  // function runDeleteButton (evt) {
+
+  // };
+
+
+  // deleteButton.addEventListener('click', runDeleteButton);
+  deleteAll.addEventListener('click', runDeleteAll);
+
+})(Chatty)

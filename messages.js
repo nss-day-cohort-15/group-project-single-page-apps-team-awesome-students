@@ -23,7 +23,7 @@ Chatty = (function (createMessage) {
   };
 
     return createMessage
-})({} )
+})(Chatty || { })
 
 
 
