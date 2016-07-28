@@ -1,5 +1,22 @@
 var Chatty = (function (thing) {
 
+//IIFE #1 Loading from the JSON file to the DOM
+thing.didLoadData = function() {
+
+var board = document.querySelector('#board')
+
+var xhr = new XMLHttpRequest()
+xhr.open('GET', 'initialMessages.json')
+xhr.addEventListener('load', function(){
+  var message = JSON.parse(xhr.responseText)
+	Chatty.populateBoard(message);
+})
+xhr.send()
+
+}
+
+
+
 //IIFE #2, adding a new message to the JSON
 	function enter(e) {
 		var userInput = document.getElementById("userInput").value;
@@ -8,7 +25,7 @@ var Chatty = (function (thing) {
 	      if (!userInput) {
 	      	return alert("You need to write a message!")
 	      } else {
-	      var addToJson = thing.newMessage(userInput);
+	      var addToJson = Chatty.newMessage(userInput);
 	      console.log(addToJson)
 	    }
 	   }
@@ -19,18 +36,19 @@ var Chatty = (function (thing) {
   var deleteButton = document.getElementById('deleteButton');
   var deleteAll = document.getElementById('clearAllButton');
 
+    deleteAll.addEventListener('click', runDeleteAll);
+
    function runDeleteAll(evt) {
-   	var board = document.getElementById("board").innerHTML;
+   	var board = document.getElementById("board");
    	console.log(board);
-    thing.deleteAll();
+    Chatty.deleteAll(board);
   };
 
   // function runDeleteButton (evt) {
 
   // };
-
-
   // deleteButton.addEventListener('click', runDeleteButton);
-  deleteAll.addEventListener('click', runDeleteAll);
+return Chatty
+})( Chatty)
+Chatty.didLoadData()
 
-})(Chatty)
