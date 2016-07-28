@@ -1,18 +1,22 @@
+
 function enter(e) {
-	e.preventDefault()
-    if (13 == e.keyCode) {
-     newMessage()
- }
-};
-
-var newMessage = (function (message) {
-
-  var userInput = document.querySelector("#newMessage").value;
-  console.log(userInput);
-
-   if (!userInput) {
-    return alert("You have to enter a message!");
+      if (13 == e.keyCode) {
+      e.preventDefault()
+       Chatty.createMessage()
+   }
   };
+document.getElementById('userInput').addEventListener("keypress", enter)
+
+var Chatty = (function (message) {
+
+  function createMessage () {
+
+    var userInput = document.querySelector("#nuserInput").value;
+    console.log(userInput);
+
+     if (!userInput) {
+      return alert("You have to enter a message!");
+    };
 
 // Delete Button
   // var deleteButton = `<button id="deleteButton"> Delete Message </button>`;
@@ -21,32 +25,30 @@ var newMessage = (function (message) {
   // });
 
 // Time Stamps
-  var currentTime = new Date();
-  var hour = currentTime.getHours();
-  var minute = currentTime.getMinutes();
+    var currentTime = new Date();
+    var hour = currentTime.getHours();
+    var minute = currentTime.getMinutes();
 
 // Saved message logs
-  var savedMessages = [];
+    var savedMessages = [];
 
 //Add new message to saved messaged log
-savedMessages.push(`${currentTime} : ${userInput}`);
+    savedMessages.push(`${currentTime} : ${userInput}`);
 
 // add new message to board
+    console.log('hello');
 
+    savedMessages.push(`${currentTime} : ${userInput}`);
 
+    var board = document.querySelector("#board");
 
-     console.log('hello');
+    board.innerHTML += `<div> ${hour}:${minute} // ${userInput} deleteButton <div> <br> <br>`;
 
-  	 savedMessages.push(`${currentTime} : ${userInput}`);
-
-     var board = document.querySelector("#board");
-
-     board.innerHTML += `<div> ${hour}:${minute} // ${userInput} deleteButton <div> <br> <br>`;
-
-     console.log( savedMessages, board)
+    console.log(savedMessages, board)
+  };
 
     return message
-})()
+})( {} )
 
 
 
