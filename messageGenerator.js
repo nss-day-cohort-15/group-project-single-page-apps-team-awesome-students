@@ -3,8 +3,6 @@ var Chatty = (function (boardHandler) {
 
   boardHandler.populateBoard = function(message) {
 
-    var arrayOfMessages = [];
-
     message.forEach(function (currentMessage) {
 
       var currentTime = new Date();
@@ -18,8 +16,6 @@ var Chatty = (function (boardHandler) {
         </div> `)
 
     })
-
-  return arrayOfMessages
   }
 
 return boardHandler
