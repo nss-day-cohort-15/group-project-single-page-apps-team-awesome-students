@@ -28,7 +28,7 @@ var Chatty = (function (thing) {
 	  } else {
 	    board.innerHTML = Chatty.newMessage(userInput) + board.innerHTML;
       }
-	  }
+    }
 	};
 
 	document.getElementById('userInput').addEventListener("keypress", enter);
