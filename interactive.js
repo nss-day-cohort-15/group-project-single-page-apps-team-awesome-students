@@ -43,28 +43,28 @@ function marqMemeLord(e) {
 // BREAK IN CASE OF EMERGENCY
 
 
-// 		  } else if (marquees.childElementCount >= 2 && marquees.childElementCount <= 5) {
-// 		  	marquees.innerHTML = marquees.innerHTML + `<div> </div`;
-// 		  	console.log("Great post!")
+		  } else if (marquees.childElementCount >= 2 && marquees.childElementCount <= 5) {
+		  	marquees.innerHTML = marquees.innerHTML + `<div> </div`;
+		  	console.log("Great post!")
 
-// 		  } else if (marquees.childElementCount >= 6 && marquees.childElementCount <= 9) {
-// 		  	marquees.innerHTML = marquees.innerHTML + `<div> </div`;
-// 	   	console.log("You are provoking the marqmeme lord with your constant messaging, this is a warning")
+		  } else if (marquees.childElementCount >= 6 && marquees.childElementCount <= 9) {
+		  	marquees.innerHTML = marquees.innerHTML + `<div> </div`;
+	   	console.log("You are provoking the marqmeme lord with your constant messaging, this is a warning")
 
-// 		  } else if (marquees.childElementCount >= 10 && marquees.childElementCount <= 13) {
-// 		  	marquees.innerHTML = marquees.innerHTML + `<div> </div`;
-// 		  	console.log("Seriously dude cut out your shit posting")
+		  } else if (marquees.childElementCount >= 10 && marquees.childElementCount <= 13) {
+		  	marquees.innerHTML = marquees.innerHTML + `<div> </div`;
+		  	console.log("Seriously dude cut out your shit posting")
 
-// 		  } else if (marquees.childElementCount >= 14 && marquees.childElementCount <= 35) {
-// 		  	console.log("This is a just punishment")
-// 		  	marquees.innerHTML = marquees.innerHTML + `<marquee class="theWorstMarquee">
-// 	       "See what you've done? You asked for this"</marquee>`
+		  } else if (marquees.childElementCount >= 14 && marquees.childElementCount <= 35) {
+		  	console.log("This is a just punishment")
+		  	marquees.innerHTML = marquees.innerHTML + `<marquee class="theWorstMarquee">
+	       "See what you've done? You asked for this"</marquee>`
 
-// 		  } else if (marquees.childElementCount >= 36) {
-// 	   	console.log("I am all out of marq-memes, you need help")
-// 	 }
-//   }
-// }
+		  } else if (marquees.childElementCount >= 36) {
+	   	console.log("I am all out of marq-memes, you need help")
+	 }
+  }
+}
 
 document.getElementById('userInput').addEventListener("keypress", marqMemeLord);
 

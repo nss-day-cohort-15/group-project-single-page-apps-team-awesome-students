@@ -21,4 +21,4 @@ var Chatty = (function (boardHandler) {
 return boardHandler
 
 
-}) (Chatty || {})
+})(Chatty || {})
