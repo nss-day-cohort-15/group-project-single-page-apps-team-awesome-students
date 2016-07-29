@@ -1,33 +1,67 @@
-body {
+/*body {
   padding-top: 70px;
-}
-.logo {
+}*/
+/*.logo {
   font-size: 2em;
   font-weight: bold;
-  font-family:'Galada', cursive;
+  font-family:'Galada', cursive;*/
 }
-.nav {
-  display: inline;
+#nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: %100;
+  height: 100px;
+  background-color: #FF3300;
 }
-.checkbox-inline {
+
+#nav img {
+  height: 25%;
+  width: 25%;
+  margin-bottom: 10px;
+}
+
+.horribleMarquee {
+  color: red;
+  font-size: 1.8em;
+  padding: 15px 0px;
+  animation: blink-animation .5s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+/*.checkbox-inline {
   margin-left: 80px;
-}
+}*/
 
 .kill {
   margin-bottom: 5px;
 }
 
-.board {
+#board {
   border:1px solid black;
   margin-bottom: 15px;
+  min-height: 400px;
 }
 
-.board p, button {
+#board p, button {
   margin-left: 20px;
   margin-top: 10px;
 }
 
-.board button {
+#board button {
   border-radius: 5px;
 }
 
@@ -45,8 +79,14 @@ body {
   font-size: 2.25em;
 }
 
-nav img {
+/*nav img {
   height:180px;
   width:200px;
 
-}
+}*/
+
+
+
+
+
+
